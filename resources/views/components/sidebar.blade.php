@@ -311,12 +311,21 @@
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarGrievance">
                         <ul class="nav nav-sm flex-column">
-                            <li class="nav-item"><a href="#" class="nav-link"><i
-                                        class="las la-ticket-alt"></i> Raise Ticket </a></li>
-                            <li class="nav-item"><a href="#" class="nav-link"><i
-                                        class="las la-inbox"></i> Inbox</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link"><i
-                                        class="las la-paper-plane"></i> Outbox</a></li>
+                            <li class="nav-item">
+                                <a href="{{ route('user.grievance.raise-ticket') }}" class="nav-link">
+                                    <i class="las la-ticket-alt"></i> Raise Ticket
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('user.grievance.inbox') }}" class="nav-link">
+                                    <i class="las la-inbox"></i> Inbox
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('user.grievance.outbox') }}" class="nav-link">
+                                    <i class="las la-paper-plane"></i> Outbox
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>

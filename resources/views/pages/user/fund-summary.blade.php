@@ -5,7 +5,6 @@
 <div class="main-content">
     <div class="page-content">
         <div class="container-fluid">
-            
             <!-- Page Title -->
             <div class="row mb-4">
                 <div class="col-12">

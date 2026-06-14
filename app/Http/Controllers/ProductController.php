@@ -31,6 +31,7 @@ class ProductController extends Controller
             ->where('user_id', $userId)
             ->where('wallet_id', 1)
             ->value('balance');
+            // dd($walletBalance);
 
         $walletBalance = $walletBalance ?? 0;
 

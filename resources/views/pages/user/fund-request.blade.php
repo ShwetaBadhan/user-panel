@@ -36,101 +36,101 @@
                         @csrf
                         
                         <div class="row">
-                            <div class="col-md-6">
-                                <!-- Payment Mode -->
-                                <div class="mb-3">
-                                    <label class="form-label text-muted fw-medium">Payment Mode</label>
-                                    <select class="form-select" id="paymentMode" name="payment_mode" required>
-                                        <option value="">Select</option>
-                                    </select>
-                                </div>
+                            <!-- Payment Mode -->
+                            <div class="col-md-4 mb-3" id="paymentModeColumn">
+                                <label class="form-label text-muted fw-medium">Payment Mode</label>
+                                <select class="form-select" id="paymentMode" name="payment_mode" required>
+                                    <option value="">Select</option>
+                                </select>
+                            </div>
 
-                                <!-- Bank Details Section (Hidden initially) -->
-                                <div id="bankDetailsSection" style="display: none;">
-                                    <div class="mb-3">
-                                        <label class="form-label text-muted fw-medium">QR Code</label>
-                                        <div id="qrCodeDisplay" class="text-center p-3 bg-light rounded">
-                                            <img id="qrCodeImg" src="" alt="QR Code" class="img-fluid" style="max-width: 200px;">
-                                        </div>
-                                    </div>
+                            <!-- Dynamic bank details will be appended here -->
 
-                                    <div class="mb-3">
-                                        <label class="form-label text-muted fw-medium">Bank Name</label>
-                                        <input type="text" class="form-control bg-light" id="bankName" readonly>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label class="form-label text-muted fw-medium">IFSC Code</label>
-                                        <input type="text" class="form-control bg-light" id="ifscCode" readonly>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label class="form-label text-muted fw-medium">Account NO.</label>
-                                        <input type="text" class="form-control bg-light" id="accountNo" readonly>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label class="form-label text-muted fw-medium">UPI Address</label>
-                                        <input type="text" class="form-control bg-light" id="upiAddress" readonly>
+                            {{-- <!-- Bank Details Section (Hidden initially) -->
+                            <div id="bankDetailsSection" style="display: none;">
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label text-muted fw-medium">QR Code</label>
+                                    <div id="qrCodeDisplay" class="text-center p-3 bg-light rounded">
+                                        <img id="qrCodeImg" src="" alt="QR Code" class="img-fluid" style="max-width: 200px;">
                                     </div>
                                 </div>
 
-                                <!-- Amount -->
-                                <div class="mb-3">
-                                    <label class="form-label text-muted fw-medium">Enter Amount</label>
-                                    <input type="number" class="form-control" name="amount" placeholder="Enter Amount" required min="1">
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label text-muted fw-medium">Bank Name</label>
+                                    <input type="text" class="form-control bg-light" id="bankName" readonly>
                                 </div>
 
-                                <!-- Remark -->
-                                <div class="mb-3">
-                                    <label class="form-label text-muted fw-medium">Enter Remark</label>
-                                    <input type="text" class="form-control" name="remark" placeholder="Enter Remark">
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label text-muted fw-medium">IFSC Code</label>
+                                    <input type="text" class="form-control bg-light" id="ifscCode" readonly>
                                 </div>
 
-                                <!-- Mode of Payment -->
-                                <div class="mb-3">
-                                    <label class="form-label text-muted fw-medium">Mode Of Payment</label>
-                                    <select class="form-select" name="mode_of_payment" required>
-                                        <option value="">Select</option>
-                                        <option value="IMPS">IMPS</option>
-                                        <option value="NEFT">NEFT</option>
-                                        <option value="RTGS">RTGS</option>
-                                        <option value="UPI">UPI</option>
-                                    </select>
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label text-muted fw-medium">Account NO.</label>
+                                    <input type="text" class="form-control bg-light" id="accountNo" readonly>
                                 </div>
 
-                                <!-- Deposit Bank -->
-                                <div class="mb-3">
-                                    <label class="form-label text-muted fw-medium">Deposit Bank</label>
-                                    <input type="text" class="form-control" name="deposit_bank" placeholder="Deposit Bank" required>
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label text-muted fw-medium">UPI Address</label>
+                                    <input type="text" class="form-control bg-light" id="upiAddress" readonly>
                                 </div>
+                            </div> --}}
 
-                                <!-- Transaction Number -->
-                                <div class="mb-3">
-                                    <label class="form-label text-muted fw-medium">Enter Transaction No</label>
-                                    <input type="text" class="form-control" name="transaction_no" placeholder="Enter Transaction No" required>
-                                </div>
+                            <!-- Amount -->
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label text-muted fw-medium">Enter Amount</label>
+                                <input type="number" class="form-control" name="amount" placeholder="Enter Amount" required min="1">
+                            </div>
 
-                                <!-- Deposit Date -->
-                                <div class="mb-3">
-                                    <label class="form-label text-muted fw-medium">Deposite Date</label>
-                                    <input type="date" class="form-control" name="deposit_date" required>
-                                </div>
+                            <!-- Remark -->
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label text-muted fw-medium">Enter Remark</label>
+                                <input type="text" class="form-control" name="remark" placeholder="Enter Remark">
+                            </div>
 
-                                <!-- Hash Code Image -->
-                                <div class="mb-3">
-                                    <label class="form-label text-muted fw-medium">Hash Code</label>
-                                    <input type="file" class="form-control" name="hash_code" accept="image/*" id="hashCodeInput">
-                                    <small class="text-danger" id="fileSizeError" style="display: none;">You Can Not Upload More Than 2 MB Image</small>
-                                    <small class="text-muted">Max file size: 2MB (JPEG, PNG, JPG, GIF)</small>
-                                </div>
+                            <!-- Mode of Payment -->
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label text-muted fw-medium">Mode Of Payment</label>
+                                <select class="form-select" name="mode_of_payment" required>
+                                    <option value="">Select</option>
+                                    <option value="IMPS">IMPS</option>
+                                    <option value="NEFT">NEFT</option>
+                                    <option value="RTGS">RTGS</option>
+                                    <option value="UPI">UPI</option>
+                                </select>
+                            </div>
 
-                                <!-- Submit Button -->
-                                <div class="mt-4">
-                                    <button type="submit" class="btn btn-primary px-4" style="background: #1e3a5f; border: none;">
-                                        <i class="las la-paper-plane me-2"></i>Send
-                                    </button>
-                                </div>
+                            <!-- Deposit Bank -->
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label text-muted fw-medium">Deposit Bank</label>
+                                <input type="text" class="form-control" name="deposit_bank" placeholder="Deposit Bank" required>
+                            </div>
+
+                            <!-- Transaction Number -->
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label text-muted fw-medium">Enter Transaction No</label>
+                                <input type="text" class="form-control" name="transaction_no" placeholder="Enter Transaction No" required>
+                            </div>
+
+                            <!-- Deposit Date -->
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label text-muted fw-medium">Deposite Date</label>
+                                <input type="date" class="form-control" name="deposit_date" required>
+                            </div>
+
+                            <!-- Hash Code Image -->
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label text-muted fw-medium">Hash Code</label>
+                                <input type="file" class="form-control" name="hash_code" accept="image/*" id="hashCodeInput">
+                                <small class="text-danger" id="fileSizeError" style="display: none;">You Can Not Upload More Than 2 MB Image</small>
+                                <small class="text-muted">Max file size: 2MB (JPEG, PNG, JPG, GIF)</small>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="mt-4">
+                                <button type="submit" class="btn btn-primary px-4" style="background: #1e3a5f; border: none;">
+                                    <i class="las la-paper-plane me-2"></i>Send
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -242,49 +242,65 @@ function populatePaymentModeDropdown(banks) {
     console.log('✅ Dropdown populated with', banks.length, 'banks');
 }
 
-// ✅ Show bank details when payment mode is selected
-document.getElementById('paymentMode').addEventListener('change', function() {
+document.getElementById('paymentMode').addEventListener('change', function () {
+
     const bankId = this.value;
-    const bankDetailsSection = document.getElementById('bankDetailsSection');
-    
-    console.log('🔔 Payment mode changed, bank ID:', bankId);
-    
-    if (bankId) {
-        const selectedBank = bankDetails.find(bank => bank.id == bankId);
-        
-        if (selectedBank) {
-            console.log('✅ Selected bank:', selectedBank);
-            
-            // Show bank details section
-            bankDetailsSection.style.display = 'block';
-            
-            // Populate bank details
-            document.getElementById('bankName').value = selectedBank.bank_name || 'N/A';
-            document.getElementById('ifscCode').value = selectedBank.ifsc_code || 'N/A';
-            document.getElementById('accountNo').value = selectedBank.account_no || 'N/A';
-            document.getElementById('upiAddress').value = selectedBank.address || 'N/A';
-            
-            // Store bank ID in hidden field for form submission
-            let hiddenInput = document.querySelector('input[name="bank_detail_id"]');
-            if (!hiddenInput) {
-                hiddenInput = document.createElement('input');
-                hiddenInput.type = 'hidden';
-                hiddenInput.name = 'bank_detail_id';
-                document.getElementById('fundRequestForm').appendChild(hiddenInput);
+
+    // Remove old bank details if already rendered
+    document.getElementById('bankDetailsSection')?.remove();
+
+    if (!bankId) return;
+
+    const selectedBank = bankDetails.find(bank => bank.id == bankId);
+
+    if (!selectedBank) return;
+
+    const html = ` 
+            ${
+                selectedBank.image
+                ? `
+                <div class="col-md-4 mb-3">
+                    <label class="form-label text-muted fw-medium">QR Code</label>
+                    <div class="text-center p-3 bg-light rounded">
+                        <img src="/storage/${selectedBank.image}"
+                             class="img-fluid"
+                             style="max-width:200px;">
+                    </div>
+                </div>
+                `
+                : ''
             }
-            hiddenInput.value = bankId;
-            
-            // Show QR code if available
-            if (selectedBank.image) {
-                document.getElementById('qrCodeImg').src = '/storage/' + selectedBank.image;
-                document.getElementById('qrCodeDisplay').style.display = 'block';
-            } else {
-                document.getElementById('qrCodeDisplay').style.display = 'none';
-            }
-        }
-    } else {
-        bankDetailsSection.style.display = 'none';
-    }
+
+            <div class="col-md-4 mb-3">
+                <label class="form-label text-muted fw-medium">Bank Name</label>
+                <input type="text" class="form-control bg-light"
+                       value="${selectedBank.bank_name || 'N/A'}" readonly>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label class="form-label text-muted fw-medium">IFSC Code</label>
+                <input type="text" class="form-control bg-light"
+                       value="${selectedBank.ifsc_code || 'N/A'}" readonly>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label class="form-label text-muted fw-medium">Account No.</label>
+                <input type="text" class="form-control bg-light"
+                       value="${selectedBank.account_no || 'N/A'}" readonly>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label class="form-label text-muted fw-medium">UPI Address</label>
+                <input type="text" class="form-control bg-light"
+                       value="${selectedBank.address || 'N/A'}" readonly>
+            </div>
+
+            <input type="hidden" name="bank_detail_id" value="${bankId}"> 
+    `;
+
+    document
+        .getElementById('paymentModeColumn')
+        .insertAdjacentHTML('afterend', html);
 });
 
 // ✅ File size validation

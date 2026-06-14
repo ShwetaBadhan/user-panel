@@ -30,6 +30,7 @@ use App\Http\Controllers\User\CourierDeliveryController;
 use App\Http\Controllers\User\ByHandAwardController;
 use App\Http\Controllers\User\ByCourierAwardController;
 use App\Http\Controllers\User\OtherProductsController;
+use App\Http\Controllers\User\GrievanceController;
 
 // 1. Login routes (GET shows form, POST processes login)
 Route::match(['get', 'post'], '/', [LoginController::class, 'handleLogin'])->name('login');
@@ -196,3 +197,11 @@ Route::get('/by-courier-award/data', [ByCourierAwardController::class, 'getCouri
 // Other Products
 Route::get('/other-products', [OtherProductsController::class, 'index'])->name('user.other-products');
 Route::get('/other-products/data', [OtherProductsController::class, 'getOtherProductsData'])->name('user.other-products.data');
+
+// Grievance Cell
+Route::get('/grievance/raise-ticket', [GrievanceController::class, 'raiseTicket'])->name('user.grievance.raise-ticket');
+Route::post('/grievance/submit', [GrievanceController::class, 'submitTicket'])->name('user.grievance.submit');
+Route::get('/grievance/outbox', [GrievanceController::class, 'outbox'])->name('user.grievance.outbox');
+Route::get('/grievance/outbox/data', [GrievanceController::class, 'getOutboxData'])->name('user.grievance.outbox.data');
+Route::get('/grievance/inbox', [GrievanceController::class, 'inbox'])->name('user.grievance.inbox');
+Route::get('/grievance/inbox/data', [GrievanceController::class, 'getInboxData'])->name('user.grievance.inbox.data');

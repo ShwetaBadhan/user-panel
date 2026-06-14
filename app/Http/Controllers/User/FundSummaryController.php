@@ -37,6 +37,7 @@ class FundSummaryController extends Controller
                 $fundSummaries = collect($data['data'] ?? [])->map(fn($item) => (object) $item);
                 $totals = (object) ($data['totals'] ?? ['credit' => 0, 'debit' => 0]);
 
+
                 return view('pages.user.fund-summary', compact('fundSummaries', 'totals'));
             }
         } catch (\Exception $e) {
